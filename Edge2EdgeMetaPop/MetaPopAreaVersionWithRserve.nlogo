@@ -230,6 +230,8 @@ to R-show-func
   rserve:eval "plot(ext_prob~area,type=\"l\",lwd=2,col=2,main=\"Relationship between area and extinction probability\")"
  
 end
+;;It can be quite frustrating to send each command through reserve:eval, especially as it seems to be impossible to build functions.
+;;A simple solution is to source in a script that can be run and tested first with dummy input outside Netlogo
 
 to R-show-func2
   rserve:eval "setwd(\"/home/duncan/Dropbox/Public/netlogo/models/MyModels/Edge2EdgeMetaPop\")"
@@ -482,6 +484,12 @@ NIL
 
 @#$#@#$#@
 ## WHAT IS IT?
+
+Thi is a trial of the rserve extension. The buttons run an R script from within Netlogo. It will only work after installing the R sever and starting it running with **R CMD Rserve**
+
+Also find and change the path on this line in order to match the directory where the test.r file has been placed.
+
+**rserve:eval "setwd(\"/home/duncan/Dropbox/Public/netlogo/models/MyModels/Edge2EdgeMetaPop\")"**
 
 This is a very simple implementation of a Levins type metapopulation. 
 In this model extinction is a function of patch area. The user can set a value for the 
