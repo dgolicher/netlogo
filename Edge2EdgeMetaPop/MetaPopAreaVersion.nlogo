@@ -65,7 +65,6 @@ end
 to setup
   make-network
   reset-ticks
-  clear-plot
   clear-all-plots
 end
 
@@ -146,6 +145,12 @@ to go-extinct
     if random 100 < ext_prob [
       set occupied? FALSE
       set color green]
+end
+
+to-report extinction-prob
+    let lambda ln(2) / half_area
+    let ext_prob 100 * exp(- lambda * area) 
+    report ext_prob
 end
 
 to get-colonised
